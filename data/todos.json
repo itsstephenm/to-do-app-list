@@ -1,0 +1,13 @@
+ {
+  "tasks": [
+    {
+      "id": "1",
+      "text": "Prepare for interview"
+    },
+    {
+      "id": "2",
+      "text": "Become a full Stack Developer"
+    }
+  ]
+} 
+
