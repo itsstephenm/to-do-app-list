@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const ToDoList = () => {
+async function getTodos(){
+  const res = await fetch('http://localhost:3001/todos');
+  const todos = await res.json();
+  return todos;
+}
 
-  
+
+
+export default async function ToDoList() {
+
+  const tasktable = await getTodos();
+
   return (
     <div className="overflow-x-auto">
   <table className="table">
@@ -10,21 +19,23 @@ const ToDoList = () => {
     <thead>
       <tr>
         <th></th>
-        <th>Name</th>
-        <th>Favorite Color</th>
-      </tr>
+        <th>TASK</th>
+        <th>ACTION</th>
+     </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Blue</td>
-      </tr>
+      {tasktable.map(task =>(
+           <tr key={task.id}>
+           <th>{task.id}</th>
+           <td>{task.text}</td>
+           <td>Blue</td>
+         </tr>
+      ))}
+      
     </tbody>
   </table>
 </div>
   )
 }
 
-export default ToDoList
+

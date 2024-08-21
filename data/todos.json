@@ -1,12 +1,12 @@
  {
-  "tasks": [
+  "todos": [
     {
       "id": "1",
-      "text": "Prepare for interview"
+      "text": "Set an alarm"
     },
     {
       "id": "2",
-      "text": "Become a full Stack Developer"
+      "text": "Make a call"
     }
   ]
 } 
